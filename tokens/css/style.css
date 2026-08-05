@@ -1114,6 +1114,11 @@ a {
     min-width: auto;
   }
 
+  .toolbar .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1134,6 +1139,14 @@ a {
   .login-card {
     padding: 2rem 1.5rem;
   }
+
+  /* Hide less important table columns on tablets */
+  .projects-table th:nth-child(3),
+  .projects-table td:nth-child(3),
+  .projects-table th:nth-child(5),
+  .projects-table td:nth-child(5) {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1141,7 +1154,79 @@ a {
     padding: 1rem;
   }
 
+  .content-header {
+    margin-bottom: 1.25rem;
+  }
+
   .content-header h1 {
     font-size: 1.3rem;
+  }
+
+  /* Show only Thumbnail, Title, Actions on phones */
+  .projects-table th:nth-child(4),
+  .projects-table td:nth-child(4),
+  .projects-table th:nth-child(6),
+  .projects-table td:nth-child(6) {
+    display: none;
+  }
+
+  .projects-table th,
+  .projects-table td {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.82rem;
+  }
+
+  .table-tags {
+    max-width: 140px;
+  }
+
+  .action-btns {
+    flex-direction: column;
+  }
+
+  .action-btns .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pagination {
+    gap: 0.25rem;
+  }
+
+  .pagination button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-header,
+  .modal-footer {
+    padding: 1rem 1.25rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .login-card .btn {
+    font-size: 0.9rem;
+  }
+
+  .table-container {
+    border-radius: var(--radius);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

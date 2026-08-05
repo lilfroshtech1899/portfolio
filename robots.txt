@@ -7,4 +7,4 @@ Disallow: /tokens/
 Disallow: /myport/
 
 # Sitemap for discovery
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+Sitemap: https://lilfroshtech.vercel.app/sitemap.xml
