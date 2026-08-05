@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Portfolio CMS</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase.js"></script>
+</head>
+<body>
+  <div class="sidebar-overlay"></div>
+
+  <div class="dashboard">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Portfolio CMS</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-section="overview">
+          <span class="nav-icon">📊</span> Overview
+        </a>
+        <a href="#" class="nav-item" data-section="projects">
+          <span class="nav-icon">📁</span> Projects
+        </a>
+        <a href="../index.html" class="nav-item" target="_blank">
+          <span class="nav-icon">👁️</span> View Site
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info" id="userEmail"></div>
+        <button class="btn btn-outline btn-sm" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1 id="pageTitle">Dashboard Overview</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </header>
+
+      <!-- OVERVIEW -->
+      <section id="section-overview" class="dashboard-section active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Projects</div>
+            <div class="stat-value" id="totalProjects">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Featured</div>
+            <div class="stat-value" id="featuredProjects">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Recently Added</div>
+            <div class="stat-value" id="recentProjects">0</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="section-projects" class="dashboard-section">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <input type="text" id="searchInput" placeholder="Search projects..." />
+            <select id="categoryFilter">
+              <option value="">All Categories</option>
+            </select>
+            <select id="sortSelect">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="addProjectBtn">+ Add Project</button>
+        </div>
+
+        <div class="table-container">
+          <table class="projects-table">
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Technologies</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Featured</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="projectsTableBody">
+              <tr><td colspan="7"><div class="loading-spinner"><div class="spinner"></div></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Project</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="projectForm">
+          <input type="hidden" id="projectId" />
+
+          <div class="form-group">
+            <label for="title">Project Title *</label>
+            <input type="text" id="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="shortDescription">Short Description *</label>
+            <textarea id="shortDescription" rows="2" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="fullDescription">Full Description</label>
+            <textarea id="fullDescription" rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Technologies *</label>
+            <div class="tags-input-wrapper" id="tagsInputWrapper">
+              <input type="text" id="tagsInput" placeholder="Type and press Enter to add..." />
+            </div>
+            <div class="tags-list" id="tagsList"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="category">Category *</label>
+              <input type="text" id="category" placeholder="e.g. Web App, Mobile, AI" required />
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="featured" /> Mark as Featured
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="liveUrl">Project Link (Live URL)</label>
+            <input type="url" id="liveUrl" placeholder="https://yourproject.com" />
+            <small class="form-hint">Paste your site link here — the portfolio will show it as a live preview and a "Live Demo" button.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="githubUrl">GitHub URL</label>
+            <input type="url" id="githubUrl" placeholder="https://github.com/username/repo" />
+          </div>
+
+          <div class="form-group">
+            <label>Thumbnail Image *</label>
+            <div class="image-upload-area">
+              <div class="upload-icon">📸</div>
+              <div class="upload-text">Click to upload thumbnail</div>
+              <input type="file" id="thumbnailInput" accept="image/*" />
+            </div>
+            <div id="thumbnailPreview"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Gallery Images</label>
+            <div class="image-upload-area">
+              <div class="upload-icon">🖼️</div>
+              <div class="upload-text">Click to upload gallery images (multiple)</div>
+              <input type="file" id="galleryInput" accept="image/*" multiple />
+            </div>
+            <div class="gallery-grid" id="galleryPreview">
+              <p class="gallery-empty">No images yet.</p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" id="modalCancel">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="modalSubmit">Save Project</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRM DIALOG -->
+  <div class="modal-overlay" id="confirmDialog">
+    <div class="modal modal-sm">
+      <div class="modal-header">
+        <h2>Confirm</h2>
+      </div>
+      <div class="modal-body">
+        <p id="confirmMessage" class="confirm-message">Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="confirmCancel">Cancel</button>
+        <button class="btn btn-danger" id="confirmOk">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

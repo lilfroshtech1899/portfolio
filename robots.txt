@@ -1,0 +1,10 @@
+# Allow Google & all search engines
+User-agent: *
+Allow: /
+
+# Block the hidden admin so it never appears in Google
+Disallow: /tokens/
+Disallow: /myport/
+
+# Sitemap for discovery
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml

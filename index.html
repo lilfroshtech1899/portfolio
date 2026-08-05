@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LilfroshTech — Full-Stack Developer & Designer | Aba, Nigeria</title>
+
+  <!-- SEO -->
+  <meta name="description" content="LilfroshTech — full-stack developer and designer crafting thoughtful, performant web applications from concept to deployment. Available for freelance and full-time work." />
+  <meta name="keywords" content="full-stack developer, web developer, UI engineer, React, Next.js, TypeScript, Nigeria, Aba, freelance developer" />
+  <meta name="author" content="LilfroshTech" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR-DOMAIN.com/" />
+
+  <!-- Open Graph (Facebook / LinkedIn / WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LilfroshTech" />
+  <meta property="og:title" content="LilfroshTech — Full-Stack Developer & Designer" />
+  <meta property="og:description" content="Designing & building digital experiences that make an impact. Full-stack development from concept to deployment." />
+  <meta property="og:url" content="https://YOUR-DOMAIN.com/" />
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LilfroshTech — Full-Stack Developer & Designer" />
+  <meta name="twitter:description" content="Designing & building digital experiences that make an impact." />
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-image.png" />
+
+  <!-- Favicon (emoji-based, no image file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "LilfroshTech",
+    "url": "https://YOUR-DOMAIN.com/",
+    "email": "mailto:lilfrosh1899@gmail.com",
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": { "@type": "Organization", "name": "CitywayITLtd" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Aba", "addressRegion": "Abia State", "addressCountry": "NG" },
+    "knowsAbout": ["React", "TypeScript", "Node.js", "Next.js", "PostgreSQL", "Docker"],
+    "sameAs": [
+      "https://github.com/lilfrosh1899",
+      "https://linkedin.com/in/lilfrosh1899"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Supabase (must load before js/supabase.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <nav>
+      <span class="logo">LilfroshTech</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <div class="hero">
+      <div class="hero-left">
+        <h1>
+          Designing & building
+          <span class="accent-text">digital experiences</span>
+          that make an impact
+        </h1>
+        <p>I'm a full-stack developer and designer crafting thoughtful, performant web applications from concept to deployment.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View projects</a>
+          <a href="#contact" class="btn btn-outline">Say hello</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="box">
+          <div class="widget" aria-hidden="true">
+            <span class="widget-dot"></span>
+            <span class="widget-text">accessible</span>
+            <span class="widget-caret"></span>
+          </div>
+          <span class="label">Accessible</span>
+        </div>
+        <div class="box">
+          <div class="widget" aria-hidden="true">
+            <span class="widget-dot"></span>
+            <span class="widget-text">clean</span>
+            <span class="widget-caret"></span>
+          </div>
+          <span class="label">Clean</span>
+        </div>
+        <div class="box">
+          <div class="widget" aria-hidden="true">
+            <span class="widget-dot"></span>
+            <span class="widget-text">modular</span>
+            <span class="widget-caret"></span>
+          </div>
+          <span class="label">Modular</span>
+        </div>
+        <div class="box">
+          <div class="widget" aria-hidden="true">
+            <span class="widget-dot"></span>
+            <span class="widget-text">responsive</span>
+            <span class="widget-caret"></span>
+          </div>
+          <span class="label">Responsive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="container">
+      <div class="section-num reveal">01 — About</div>
+      <div class="about-grid">
+        <div class="left reveal">
+          <h2 class="section-title about-title">Crafting code with purpose</h2>
+          <p>With over 5 years of experience in full-stack development, I specialize in building products that are both beautiful and functional. I believe great software is defined by the details — clean architecture, thoughtful interactions, and user-centered design.</p>
+          <p>I've worked with startups and agencies, leading projects from initial concept through launch and beyond. I'm passionate about developer experience, performance optimization, and creating systems that scale.</p>
+        </div>
+        <div class="right reveal">
+          <div class="row">
+            <div class="label">Stack</div>
+            <div class="value">
+              <div class="tags">
+                <span>React</span><span>TypeScript</span><span>Node.js</span>
+                <span>Next.js</span><span>PostgreSQL</span><span>Docker</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="label">Location</div>
+            <div class="value">Aba, Abia State, Nigeria</div>
+          </div>
+          <div class="row">
+            <div class="label">Focus</div>
+            <div class="value">Full-stack, UI engineering, Design systems</div>
+          </div>
+          <div class="row">
+            <div class="label">Currently</div>
+            <div class="value">IT Engineer at CitywayITLtd</div>
+          </div>
+          <div class="row">
+            <div class="label">Education</div>
+            <div class="value">O-Level Certificate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WORK / PROJECTS ─── -->
+  <section id="work">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div>
+          <div class="section-num">02 — Work</div>
+          <h2 class="section-title">Project done</h2>
+        </div>
+        <div class="desc">A collection of projects I've designed and built, from data platforms to AI-powered tools.</div>
+      </div>
+      <div class="projects-grid" id="projectsContainer">
+        <!-- Projects are loaded dynamically from Supabase (see js/main.js) -->
+        <div class="loading-spinner loading-cell">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div>
+          <div class="section-num">03 — Experience</div>
+          <h2 class="section-title">Career timeline</h2>
+        </div>
+        <div class="desc">Places I've worked and things I've built along the way.</div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-row reveal">
+          <div class="year">2026 — Present</div>
+          <div class="role">
+            <h4>Full-Stack Developer</h4>
+            <div class="company">Freelance · Remote</div>
+            <div class="exp-desc">Build responsive web applications using HTML, CSS, JavaScript, and modern web technologies. Develop both frontend interfaces and backend functionality, integrating databases and authentication systems.</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+        <div class="exp-row reveal">
+          <div class="year">2025 — 2026</div>
+          <div class="role">
+            <h4>ICT Engineer</h4>
+            <div class="company">Freelance</div>
+            <div class="exp-desc">Provide ICT solutions including computer troubleshooting, software installation, hardware maintenance, and technical support for individuals and businesses.</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+        <div class="exp-row reveal">
+          <div class="year">2024 — 2025</div>
+          <div class="role">
+            <h4>Network & CCTV Technician</h4>
+            <div class="company">Freelance</div>
+            <div class="exp-desc">Install and configure LAN networks, routers, switches, and CCTV surveillance systems. Perform network troubleshooting and system maintenance.</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+        <div class="exp-row reveal">
+          <div class="year">2024</div>
+          <div class="role">
+            <h4>Solar Installation Technician</h4>
+            <div class="company">Project-Based</div>
+            <div class="exp-desc">Assisted with the installation and setup of a solar power system, including equipment mounting, wiring, and system testing.</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div>
+          <div class="section-num">04 — Contact</div>
+          <h2 class="section-title">Let's talk</h2>
+        </div>
+        <div class="desc">Have a project in mind or just want to chat? Drop me a message.</div>
+      </div>
+
+      <div class="contact-grid reveal">
+        <!-- Contact info -->
+        <div>
+          <p class="contact-intro">
+            I'm currently open to freelance work and full-time opportunities. If you have a project that needs a dedicated developer, I'd love to hear about it.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:lilfrosh1899@gmail.com" class="contact-link">
+              <span class="arrow">→</span> lilfrosh1899@gmail.com
+            </a>
+            <a href="#" class="contact-link">
+              <span class="arrow">→</span> github.com/lilfrosh1899
+            </a>
+            <a href="#" class="contact-link">
+              <span class="arrow">→</span> linkedin.com/in/lilfrosh1899
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form id="contactForm" action="https://formsubmit.co/lilfrosh1899@gmail.com" method="POST" class="contact-form">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="name" placeholder="Name" required class="form-input" />
+          <input type="email" name="email" placeholder="Email" required class="form-input" />
+          <textarea name="message" placeholder="Message" required class="form-textarea"></textarea>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+
+        <!-- Thank-you card (shown after submission) -->
+        <div id="thankYouSection" class="thank-you-card">
+          <div class="icon">✓</div>
+          <h3>Thank you!</h3>
+          <p>Your message has been sent successfully. I'll get back to you soon.</p>
+          <button id="backButton" class="btn btn-outline">← Back</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <div class="container">
+    <div class="footer">
+      <span>© 2026 LilfroshTech</span>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
