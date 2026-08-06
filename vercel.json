@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/tokens", "destination": "/tokens/", "permanent": true },
+    { "source": "/myport", "destination": "/myport/", "permanent": true }
+  ]
 }
