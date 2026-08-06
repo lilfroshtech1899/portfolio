@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "buildCommand": "npm run build",
+  "outputDirectory": ".",
   "redirects": [
     { "source": "/tokens", "destination": "/tokens/", "permanent": true },
     { "source": "/myport", "destination": "/myport/", "permanent": true }
